@@ -1,10 +1,4 @@
-package web
-
-import "fmt"
-
-type Job struct {
-	endInt int
-}
+package workerPool
 
 type Pool struct {
 	jobQueue  chan Job      // Prodcution Line
@@ -23,15 +17,8 @@ func (q *Pool) dispatch() {
 }
 
 type worker struct {
-	id int
 	readyPool chan chan Job //get work from the boss
 	job       chan Job
-}
-
-func process(job Job, w *worker) {
-	for i := 0; i < job.endInt; i++ {
-		fmt.Printf("%d : This is the %d iteration\n", w.id, i)
-	}
 }
 
 func (w *worker) Start() {
@@ -40,7 +27,7 @@ func (w *worker) Start() {
 		w.readyPool <- w.job //hey i am ready to work on new job
 		select {
 		case job := <-w.job: // hey i am waiting for new job
-			process(job,w) // ok i am on it
+			w.Process(job, w) // ok i am on it
 		}
 	}
 
