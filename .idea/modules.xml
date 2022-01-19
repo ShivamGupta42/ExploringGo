@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ExploringGo.iml" filepath="$PROJECT_DIR$/ExploringGo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic/basic.iml" filepath="$PROJECT_DIR$/basic/basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/concurrency/concurrency.iml" filepath="$PROJECT_DIR$/concurrency/concurrency.iml" />
+      <module fileurl="file://$PROJECT_DIR$/main/main.iml" filepath="$PROJECT_DIR$/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/websockets/websockets.iml" filepath="$PROJECT_DIR$/websockets/websockets.iml" />
       <module fileurl="file://$PROJECT_DIR$/workerPool/workerPool.iml" filepath="$PROJECT_DIR$/workerPool/workerPool.iml" />
     </modules>
   </component>
