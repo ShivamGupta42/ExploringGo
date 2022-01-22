@@ -24,11 +24,9 @@ func DailyRoutine(ctx context.Context) {
 	jobs := []int{1, 2, 3, 4}
 	for _, j := range jobs {
 		wg.Add(1)
+		fmt.Println(j)
 		// see the library
-		Pool.Submit(&Job{
-			Id: j,
-			Wg: wg,
-		})
+		//Pool.Submit(&Job{Id: j, Wg: &wg})
 	}
 
 	//waiting all jobs to be finished

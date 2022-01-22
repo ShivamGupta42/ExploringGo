@@ -1,7 +1,7 @@
 package main
 
 import (
-	"basic/stringAlgos"
+	"ExploringGo/stringAlgos"
 	"fmt"
 )
 

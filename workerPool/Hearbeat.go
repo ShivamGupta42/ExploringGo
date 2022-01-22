@@ -5,6 +5,10 @@ type Pool struct {
 	readyPool chan chan Job // Worker Channel
 }
 
+func (q *Pool) Submit(j *Job) {
+
+}
+
 // Manager in action
 func (q *Pool) dispatch() {
 	for {
@@ -30,5 +34,9 @@ func (w *worker) Start() {
 			w.Process(job, w) // ok i am on it
 		}
 	}
+
+}
+
+func (w *worker) Process(job Job, w2 *worker) {
 
 }
