@@ -3,7 +3,7 @@ package tests
 import "testing"
 
 var acceptParamsAndValidate = func(t testing.TB, want string, got string) {
-	t.Helper()
+	t.Helper() //Why am i able to call this on a pointer variable
 	if got != want {
 		t.Errorf("Wanted %s , Got %s", want, got)
 	}
