@@ -8,6 +8,7 @@ import (
 
 func concurMerge(left, right []int) []int {
 	merged := make([]int, 0, len(left)+len(right))
+
 	for len(left) > 0 || len(right) > 0 {
 		if len(left) == 0 {
 			return append(merged, right...)
@@ -21,6 +22,7 @@ func concurMerge(left, right []int) []int {
 			right = right[1:]
 		}
 	}
+
 	return merged
 }
 
