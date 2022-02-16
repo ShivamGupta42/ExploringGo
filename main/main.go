@@ -1,35 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"net/http"
+)
 
 func main() {
-	/* MergeSort programs
-	concurMergeSortExecute()
-	seqMergeSortExecute()
-	*/
 
-	/*
-		executeWaitGroup()
-	*/
+	//Register Routes
+	http.HandleFunc("/Route1", Route1)
+	http.HandleFunc("/Route2", Route2)
+	http.HandleFunc("/Route3", Route3)
 
-	//mutexBank()
+	log.Fatal(http.ListenAndServe(":2000", nil))
 
-	//runtimePackOpr()
+}
 
-	//fmt.Println(stringAlgos.Swap("Hello", "World"))
+func Route1(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(200)
+	fmt.Fprintf(w, "Route1")
+}
 
-	m := make(map[string]int)
-
-	m["Answer"] = 42
-	fmt.Println("The value:", m["Answer"])
-
-	m["Answer"] = 48
-	fmt.Println("The value:", m["Answer"])
-
-	delete(m, "Answer")
-	fmt.Println("The value:", m["Answer"])
-
-	v, ok := m["Answeree"]
-	fmt.Println("The value:", v, "Present?", ok)
-
+func Route2(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(200)
+	fmt.Fprintf(w, "Route2")
+}
+func Route3(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(200)
+	fmt.Fprintf(w, "Route3")
 }
