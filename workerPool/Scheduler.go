@@ -9,13 +9,11 @@ import (
 // ScheduledJob function
 type ScheduledJob func(ctx context.Context)
 
-// Scheduler
 type Scheduler struct {
 	wg            *sync.WaitGroup
 	cancellations []context.CancelFunc
 }
 
-// Init
 func NewScheduler() *Scheduler {
 	return &Scheduler{
 		wg:            new(sync.WaitGroup),
@@ -23,7 +21,6 @@ func NewScheduler() *Scheduler {
 	}
 }
 
-// Scheduler Job Addition
 func (s *Scheduler) Add(ctx context.Context,
 	job ScheduledJob,
 	interval time.Duration,

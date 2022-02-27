@@ -19,7 +19,7 @@ func FileParser(fsMap fstest.MapFS) []Post {
 	for fileName, data := range fsMap {
 		fmt.Printf("Processing file %s \n", fileName)
 		var post Post
-		json.Unmarshal([]byte(data.Data), &post)
+		json.Unmarshal(data.Data, &post)
 		posts = append(posts, post)
 	}
 	return posts
