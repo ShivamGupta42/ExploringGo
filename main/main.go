@@ -1,7 +1,6 @@
 package main
 
 import (
-	"ExploringGo/concurrency"
 	"fmt"
 	"net/http"
 )
@@ -14,7 +13,7 @@ func main() {
 	//http.HandleFunc("/Route3", Route3)
 	//
 	//log.Fatal(http.ListenAndServe(":2000", nil))
-	concurrency.ConcurMultiplication()
+	//concurrency.ConcurMultiplication()
 
 }
 
