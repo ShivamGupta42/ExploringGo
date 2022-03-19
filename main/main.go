@@ -1,19 +1,20 @@
 package main
 
 import (
+	"ExploringGo/concurrency"
 	"fmt"
-	"log"
 	"net/http"
 )
 
 func main() {
 
-	//Register Routes
-	http.HandleFunc("/Route1", Route1)
-	http.HandleFunc("/Route2", Route2)
-	http.HandleFunc("/Route3", Route3)
-
-	log.Fatal(http.ListenAndServe(":2000", nil))
+	////Register Routes
+	//http.HandleFunc("/Route1", Route1)
+	//http.HandleFunc("/Route2", Route2)
+	//http.HandleFunc("/Route3", Route3)
+	//
+	//log.Fatal(http.ListenAndServe(":2000", nil))
+	concurrency.ConcurMultiplication()
 
 }
 

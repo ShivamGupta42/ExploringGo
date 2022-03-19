@@ -14,7 +14,7 @@ func printTable(wg *sync.WaitGroup, number int) {
 	wg.Done()
 }
 
-func concurMultiplication() {
+func ConcurMultiplication() {
 	var wg sync.WaitGroup
 	wg.Add(12)
 
