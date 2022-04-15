@@ -7,6 +7,11 @@ import (
 	"time"
 )
 
+/* IDEA 💡
+   When multiple threads are in contention
+   And you want to communicate back to the winning thread
+*/
+
 var wg sync.WaitGroup
 
 func Race(raceUpdates, quit chan string, i int) {
